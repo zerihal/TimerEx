@@ -14,6 +14,11 @@ namespace TimerEx
             Stop();
             Start();
         }
+
+        public int? GetTicks()
+        {
+            return null;
+        }
     }
 
 }

@@ -4,6 +4,9 @@ namespace TimerEx
 {
     public class TimerEx : Timer
     {
+        #region Fields
+        private int _ticks;
+        #endregion
         #region Construction
         /// <summary>
         /// Creates an instance of TimerEx with the specified interval.
@@ -12,6 +15,18 @@ namespace TimerEx
         public TimerEx(int v)
         {
             Interval = v;
+            _ticks = 0;
+            Elapsed += TimerEx_Elapsed;
+        }
+        #endregion
+
+        #region Event Handlers
+        /// <summary>
+        /// Increments the number of ticks (elapsed) by one.
+        /// </summary>
+        private void TimerEx_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            _ticks++;
         }
         #endregion
 
@@ -31,7 +46,7 @@ namespace TimerEx
         /// <returns>Number of ticks or null</returns>
         public int? GetTicks()
         {
-            return null;
+            return _ticks;
         }
         #endregion
     }

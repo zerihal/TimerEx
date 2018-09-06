@@ -19,8 +19,6 @@ namespace TimerEx
             _extTimer = new TimerEx(3000);
             updateUI("Stopped");
 
-            _extTimer = null;
-
             if (_extTimer != null)
                 _extTimer.Elapsed += _extTimer_Elapsed;
             else
